@@ -1,0 +1,68 @@
+<h3 class="display-4 text-center" style="color:yellow;">Placement-Registration</h3>
+<div class="row mt-3">
+    <div class="col-sm-3">
+
+
+
+    <input type="file" name="uploadfile" class="form-control form-group" style="display:table;" (change)="placementData($event)" ngModel>
+    
+</div>
+
+<div class="col-sm-4">
+     
+    
+</div>
+
+    <div class="col-5">
+ 
+    <button type="button" class="btn btn-success text-dark"  (click)="downloadPDF()">pdf</button>&nbsp;
+
+    <button type="submit"  class="btn btn-primary" (click)="downloadFile()">Download Excel</button>
+
+
+</div>
+</div>
+<br>
+<br>
+    
+
+   <div class="row">
+       <div class="col-md-6">
+           <table class="table table-striped ">
+               <thead class="thead-dark">
+               <th>ChooseBranch</th>
+               <th>CompanyName</th>
+               <th>JobDescription</th>
+               <th>Requirments</th>
+               <th>JobRole</th>
+               <th>NoOfInterviewRound</th>
+               <th>NoOfVacancies</th>
+               <th>PackageDetails</th>
+           </thead>
+           <tr *ngFor="let m of data">
+            <td>{{m.gbranch}}</td>
+            <td>{{m.companyname}}</td>
+            <td>{{m.jobdescription}}</td>
+            <td>{{m.requirements}}</td>
+            <td>{{m.jobrole}}</td>
+            <td>{{m.noofrounds}}</td>
+            <td>{{m.noofvancancies}}</td>
+            <td>{{m.packagedetails}}</td>
+           </tr>
+        </table>
+       </div>
+   </div>
+
+
+
+
+               
+        
+                                              
+                                                             
+               
+              
+              
+                
+             
+     

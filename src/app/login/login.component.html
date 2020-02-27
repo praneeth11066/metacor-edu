@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+        
+                    <h1>Login</h1>
+                   <form #formRef="ngForm" (ngSubmit)="submitData(formRef.value)" >
+            
+                    <div class="check">
+                    <input type="radio" id="admin" name="role" value="admin" ngModel>
+                    <label for="admin">Admin &nbsp; &nbsp;</label>
+                    <input type="radio" id="stu" name="role" value="student" ngModel>
+                    <label for="stu">Student</label>
+                  </div>
+            
+            <!-- username -->
+                    <div class="textbox">
+                        <i class="fas fa-user"></i>
+                      <input type="text" name="username" id="un" class="form-control" autocomplete="off" ngModel placeholder="username" style="text-align: center;">
+                    </div>
+                  
+            <!-- Password -->
+                    <div class="textbox">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" name="password" id="p" class="form-control" autocomplete="off" ngModel placeholder="password" style="text-align: center;">
+                    </div>
+                  
+                    <input type="button"  type="submit" class="btn" value="Login">
+                
+                </form>
+              </div>
+       
+    </div>
+</div>
+
+<div class="col-4"></div>
+
+  <router-outlet></router-outlet>
+
+

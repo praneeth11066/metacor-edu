@@ -1,0 +1,282 @@
+
+<div class="text-left">
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+    Register Here
+</button>
+</div>
+<div class=" form-group text-right" style="display:table; text-align: end;">
+  <input type="search" placeholder="Search By Student_Name" class="form-control mt-5" [(ngModel)]="searchTerm"> 
+</div>
+
+<div class="text-right">
+<label for="gyear"></label>
+<select id="gyear" #refchange (change)="changeyear(refchange.value)" ngModel>
+  <option default>Choose Joining Year</option>
+  <option value="all">All</option>
+  <option value="2014">2014</option>
+  <option value="2015">2015</option>
+  <option value="2016">2016</option>
+  <option value="2017">2017</option>
+  <option value="2018">2018</option>
+  <option value="2019">2019</option>
+  <option value="2020">2020</option>
+</select>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+     <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+           <div class="row">
+               <div class="col-sm-8">
+                <form name="form" #Form="ngForm">
+                    <div class="form-group">
+                    <label for="n">FullName</label>
+                    <input type="text" id="n" name="fullname" #fullname="ngModel"   autocomplete="off" required placeholder="FullName" class="form-control" [(ngModel)]="searchTerm">
+                 <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)" class="text-danger">
+                   <div *ngIf="fullname.errors?.requried"></div>
+                     Name is requried
+                </div>
+                   </div>
+                   
+                   <div class="form-group">
+                     <label for="e">Email</label>
+                          <input type="email" id="e" name="email" #email="ngModel" autocomplete="off" required email placeholder="Email" class="form-control" ngModel>
+                          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger"> 
+                            
+                           <div *ngIf="email.errors?.requried"></div>
+                              Email is requried
+                            
+                            </div>
+                        </div>
+                    
+                      <div class="form-group">
+                          <label for="phn">PhoneNumber</label>
+                          <input type="text" id="phn" name="phonenumber" #phn="ngModel" autocomplete="off" required maxlength="10" minlength="10"  placeholder="your answer" class="form-control" ngModel>
+                          <div *ngIf="phn.invalid &&(phn.dirty || phn.touched)" class="text-danger">
+                           <div *ngIf="phn.errors?.requried"></div>
+                              PhoneNumber is requried
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Date Of Birth</label>
+                            <input type="date" id="date" name="date" #date="ngModel" autocomplete="off" required   placeholder="your answer" class="form-control" ngModel>
+                            <div *ngIf="date.invalid &&(date.dirty || date.touched)" class="text-danger">
+                             <div *ngIf="date.errors?.requried"></div>
+                                Date is requried
+                            </div>
+                          </div>
+                     Gender:
+                    <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="gender" value="Male" ngModel>Male
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input type="radio" class="form-check-input" name="gender"value="Female" ngModel>Female
+                        </label>
+                      
+                      </div>
+                      <div class="form-group">
+                        <label for="comment">Address:</label>
+                        <textarea class="form-control" name="add" rows="5" id="comment" ngModel></textarea>
+                      </div>
+                      <div class="form-group">
+                          <label for="ci">City</label>
+                          <input type="text" class="form-control" name="city" id="ci" ngModel>
+                      </div>
+                      <div class="form-group">
+                          <label for="p">Pincode</label>
+                          <input type="number" id="p" class="form-control" name="pincode" ngModel>
+                      </div>
+                      <div class="form-group">
+                          <label for="c">State</label>
+                          <input type="text" class="from-control" id="c" class="form-control" name="state" ngModel>
+                      </div>
+                      <div class="form-group">
+                          <label for="per">SSC Percentage</label>
+                          <input type="number" class="form-control" id="per" name="qua" ngModel>
+                      </div>
+                      <div class="form-group">
+                        <label for="o">InterMediate Percentage</label>
+                        <input type="number" class="form-control" id="o" name="inm" ngModel>
+                    </div>
+                    <div class="form-group">
+                      <label for="gb">Graduation Branch</label>
+                      <input type="text" class="form-control" id="gb" name="gbranch" [attr.disabled]="true" [(ngModel)]="data1">
+                  </div>
+                  <div class="form-group">
+                    <label for="gy">Graduation YearOfJoining</label>
+                    <input type="number" class="form-control" id="gy" name="gyear" ngModel>
+                </div>
+                   </form>
+               </div>
+           </div>
+      </div>
+      <div class="modal-footer">
+      
+        <button type="submit" [disabled]=Form.invalid class="btn btn-info" (click)='submitData(Form.value)'>Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="overflow-auto">
+        <table class="table table-striped" >
+                <th>Fullname</th>
+                <th>DateOfBirth</th>
+                <th>Email</th>
+                <th>PNumber</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>Pincode</th>
+                <th>State</th>
+                <th>Qualifer</th>
+                <th>Inter</th>
+                <th>Graduation Branch</th>
+                <th>Graduation YOJ</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                
+             
+                <tr *ngFor="let i of data | search : searchTerm">
+                    <td>{{i.fullname | lowercase}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.phonenumber}}</td>
+                    <td>{{i.gender}}</td>
+                    <td>{{i.add}}</td>
+                    <td>{{i.city}}</td>
+                    <td>{{i.pincode}}</td>
+                    <td>{{i.state}}</td>
+                    <td>{{i.qua}}</td>
+                    <td>{{i.inm}}</td>
+                    <td>{{i.gbranch}}</td>
+                    <td>{{i.gyear}}</td>
+                    <td>
+                     <button class="btn btn-outline-info"data-toggle="modal" (click)="update(i)"data-target="#myModal1" ><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                     <div id="myModal1" class="modal fade" role="dialog">
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                         <h4 class="modal-title">Modal Header</h4>
+                          </div>
+                          <div class="modal-body">
+                               <div class="row">
+                                   <div class="col-sm-8">
+                                    <form name="form" #Form="ngForm">
+                                        <div class="form-group">
+                                        <label for="n">FullName</label>
+                                        <input type="text" id="n" name="fullname" #fullname="ngModel"   autocomplete="off" required placeholder="FullName" class="form-control" [(ngModel)]=updateobj.fullname>
+                                     <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)" class="text-danger">
+                                       <div *ngIf="fullname.errors?.requried"></div>
+                                         Name is requried
+                                    </div>
+                                       </div>
+                                       
+                                       <div class="form-group">
+                                         <label for="e">Email</label>
+                                              <input type="email" id="e" name="email" #email="ngModel" autocomplete="off" required email placeholder="Email" class="form-control" [(ngModel)]=updateobj.email>
+                                              <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger"> 
+                                                
+                                               <div *ngIf="email.errors?.requried"></div>
+                                                  Email is requried
+                                                
+                                                </div>
+                                            </div>
+                                        
+                                          <div class="form-group">
+                                              <label for="phn">PhoneNumber</label>
+                                              <input type="text" id="phn" name="phonenumber" #phn="ngModel" autocomplete="off" required maxlength="[1-9]{1}[0-9]{11}" minlength="10"  placeholder="your answer" class="form-control" [(ngModel)]=updateobj.phonenumber>
+                                              <div *ngIf="phn.invalid &&(phn.dirty || phn.touched)" class="text-danger">
+                                               <div *ngIf="phn.errors?.requried"></div>
+                                                  PhoneNumber is requried
+                                              </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="date">Date Of Birth</label>
+                                                <input type="date" id="date" name="date" #date="ngModel" autocomplete="off" required   placeholder="your answer" class="form-control" [(ngModel)]=updateobj.date>
+                                                <div *ngIf="date.invalid &&(date.dirty || date.touched)" class="text-danger">
+                                                 <div *ngIf="date.errors?.requried"></div>
+                                                    Date is requried
+                                                </div>
+                                              </div>
+                                         Gender:
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                              <input type="radio" class="form-check-input" name="gender" value="Male" [(ngModel)]=updateobj.gender>Male
+                                            </label>
+                                          </div>
+                                          <div class="form-check">
+                                            <label class="form-check-label">
+                                              <input type="radio" class="form-check-input" name="gender"value="Female" [(ngModel)]=updateobj.gender>Female
+                                            </label>
+                                          
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="comment">Address:</label>
+                                            <textarea class="form-control" name="add" rows="5" id="comment" [(ngModel)]=updateobj.add></textarea>
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="ci">City</label>
+                                              <input type="text" class="form-control" name="city" id="ci" [(ngModel)]=updateobj.city>
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="p">Pincode</label>
+                                              <input type="number" id="p" class="form-control" name="pincode" [(ngModel)]=updateobj.pincode>
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="c">State</label>
+                                              <input type="text" class="from-control" id="c" class="form-control" name="state" [(ngModel)]=updateobj.state>
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="per">SSC Percentage</label>
+                                              <input type="number" class="form-control" id="per" name="qua" [(ngModel)]=updateobj.qua>
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="o">InterMediate Percentage</label>
+                                            <input type="number" class="form-control" id="o" name="inm" [(ngModel)]=updateobj.inm>
+                                        </div>
+                                        <div class="form-group">
+                                          <label for="gb">Graduation Branch</label>
+                                          <input type="text" class="form-control" id="gb" name="gbranch"  [(ngModel)]=updateobj.gbranch>
+                                          
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="gy">Graduation YearOfJoining</label>
+                                        <input type="number" class="form-control" id="gy" name="gyear" [(ngModel)]=updateobj.gyear>
+                                    </div>
+                                       </form>
+                                   </div>
+                               </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="submit" class="btn btn-info" data-dismiss="modal" (click)="edit(Form.value)">Update</button>
+                          </div>
+                        </div>
+                    
+                      </div>
+                    </div>
+                    
+ 
+                    
+                 </td>
+                     <td><button type="submit" class="btn btn-outline-danger" (click)="delete(i)"><i class="fa fa-trash"></i></button></td>
+                 
+                </tr>
+             
+             </table>
+             
+            </div>
+
+    
+
+
+

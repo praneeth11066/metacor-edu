@@ -1,0 +1,208 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+      <div class="row">
+      <!-- <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+           <A href="edit.html" >Edit Profile</A>
+
+        <A href="edit.html" >Logout</A>
+       <br>
+<p class=" text-info">May 05,2014,03:00 pm </p>
+      </div> -->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+   
+   
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{this.stu.fullname}}</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3" ><i class="fas fa-user-graduate fa-8x" width="500px"></i></div>
+                
+                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
+                  <dl>
+                    <dt>DEPARTMENT:</dt>
+                    <dd>Administrator</dd>
+                    <dt>HIRE DATE</dt>
+                    <dd>11/12/2013</dd>
+                    <dt>DATE OF BIRTH</dt>
+                       <dd>11/12/2013</dd>
+                    <dt>GENDER</dt>
+                    <dd>Male</dd>
+                  </dl>
+                </div>-->
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Graduation Branch:</td>
+                        <td>{{this.stu.gbranch}}</td>
+                      </tr>
+                      <tr>
+                        <td>Graduation YOJ:</td>
+                        <td>{{this.stu.gyear}}</td>
+                      </tr>
+                      <tr>
+                        <td>Date of Birth</td>
+                        <td>{{this.stu.date}}</td>
+                      </tr>
+                   
+                         
+                             <tr>
+                        <td>Gender</td>
+                        <td>{{this.stu.gender}}</td>
+                      </tr>
+                        <tr>
+                        <td>Home Address</td>
+                        <td>{{this.stu.add}}</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td>{{this.stu.email}}</td>
+                      </tr>
+                      <tr>
+                        <td>Phone Number</td>
+                        <td>{{this.stu.phonenumber}}</td>
+                           
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                  
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId1">
+                    placement
+                  </button>
+                  
+                  <!-- Modal -->
+                  <div class="modal" id="modelId1" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                          <table>
+                            <tbody>
+                              <tr>
+                                <td>salary:</td>
+                                <td>{{this.data1.packagedetails}}</td>
+                              </tr>
+                              <tr>
+                                <td>company:</td>
+                                <td>{{this.data1.companyname}}</td>
+                              </tr>
+                              <tr>
+                                <td>vacanies:</td>
+                                <td>{{this.data1.noofvacancies}}</td>
+                                   
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        
+                        </div>
+                      </div>
+                    </div>
+                  </div>&nbsp;
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+                    fee
+                  </button>
+                  
+                  <!-- Modal -->
+                  <div class="modal" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Fee-Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                          <table>
+                            <tbody>
+                              <tr>
+                                <td>Total-fee:</td>
+                                <td>{{this.data.totalfee}}</td>
+                              </tr>
+                              <tr>
+                                <td>Paid-fee:</td>
+                                <td>{{this.data.paid}}</td>
+                              </tr>
+                              <tr>
+                                <td>Due-fee:</td>
+                                <td>{{this.data.due}}</td>
+                                   
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+                 <div class="panel-footer">
+                      <h5 class="text-center  text-warning">{{this.stu.studentid}}</h5>
+                    </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>      
+<!-- js file -->
+    <script>
+        $(document).ready(function() {
+    var panels = $('.user-infos');
+    var panelsButton = $('.dropdown-user');
+    panels.hide();
+
+    //Click dropdown
+    panelsButton.click(function() {
+        //get data-for attribute
+        var dataFor = $(this).attr('data-for');
+        var idFor = $(dataFor);
+
+        //current button
+        var currentButton = $(this);
+        idFor.slideToggle(400, function() {
+            //Completed slidetoggle
+            if(idFor.is(':visible'))
+            {
+                currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
+            }
+            else
+            {
+                currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
+            }
+        })
+    });
+
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $('button').click(function(e) {
+        e.preventDefault();
+        alert("This is a demo.\n :-)");
+    });
+});
+    </script>
+
+<router-outlet></router-outlet>

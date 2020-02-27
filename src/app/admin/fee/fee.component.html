@@ -1,0 +1,44 @@
+<h4 class="display-4" style="color: green;">Fee Details</h4>
+
+<br>
+<div class="row mt-3">
+    <div class="col-sm-3">
+        
+            <input type="file" name="uploadfile" class="form-control from-group" style="display:table;" (change)="feeData($event)" ngModel>
+            
+    </div>
+<div class="col-sm-4">
+     
+    
+</div>
+<div class="col-sm-5">
+    <button type="submit"  class="btn btn-primary" (click)="downloadFile()">Download Excel</button>&nbsp;
+
+    <button type="submit" class="btn btn-success text-dark" (click)="downloadPDF()">pdf</button>
+
+</div>
+</div>
+<br>
+<br>
+
+<table class="table">
+    <thead>
+      
+        <th>Choose Branch</th>
+        <th>Student Name</th>
+        <th>Student ID</th>
+        <th>Total Fee</th>
+        <th>Fee Paid</th>
+        <th>Due</th>
+   </thead>
+   <tr *ngFor="let m of data">
+   
+        <td>{{m.branch}}</td>
+        <td>{{m.name}}</td>
+        <td>{{m.studentid}}</td>
+        <td>{{m.totalfee}}</td>
+        <td>{{m.feepaid}}</td>
+        <td>{{m.due}}</td>
+       </tr>
+  
+</table>

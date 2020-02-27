@@ -1,0 +1,79 @@
+<div class="container">
+<div class="text-center">
+<button class="btn btn-outline-info" data-toggle="modal" data-target="#modal">Generate</button>
+
+<div class="modal fade" id="modal">
+    <div class="modal-dialog  modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal">x</button>
+           </div>
+           <div class="modal-body">
+               <div class="row">
+                   <div class="col-md-8">
+                    <form #ref="ngForm" (ngSubmit)="submitData(ref.value)">
+                        <div class="form-group">
+                            <label for="y">Year</label>
+                            <!-- <input type="number" id="y" name="year" class="form-control" ngModel> -->
+                            <input type="number" id="y" name="gyear" class="form-control" ngModel>
+                        </div>
+                        <div class="form-group">
+                         <label for="bn">Branch Name</label>
+                         <select class="form-control" id="inn" name="gbranch" ngModel>
+                            <option selected>choose</option>
+                            <option value="civil">Civil</option>
+                            <option value="mech">Mech</option>
+                            <option value="cse">CSE</option>
+                            <option value="ece">ECE</option>
+                            </select>
+                     </div>
+                     <div class="form-group">
+                         <label for="bc">Branch Code</label>
+                         <select class="form-control" id="bc" name="code" ngModel>
+                            <option selected>choose</option>
+                            <option value="01">1</option>
+                            <option value="02">2</option>
+                            <option value="03">3</option>
+                            <option value="04">4</option>
+                            </select>
+                     </div>
+                    </form>
+                   </div>
+               </div>
+            
+         </div>
+            
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" (click)="submitData(ref.value)">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-md-12">
+        <div class="table-responsive">
+        <table class="table table-stripped-xl">
+            <thead>
+                <th >Year</th>
+                <th >BranchName</th>
+                <th >Branchcode</th>
+                <th >Count</th>
+                <tr *ngFor="let i of data">
+                    <td>{{i.gyear}}</td>
+                    <td>{{i.gbranch}}</td>
+                    <td>{{i.code}}</td>
+                    <td>{{i.count}}</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
