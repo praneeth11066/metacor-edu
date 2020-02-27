@@ -520,6 +520,6 @@ app.post('/login',(req,res)=>{
     })
 })
 const port=2130;
-app.listen(process.env.PORT || port,()=>{
+app.listen(process.env.PORT || port,function(){
     console.log(`server listening ${port}.......`)
 })
