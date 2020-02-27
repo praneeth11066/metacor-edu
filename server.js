@@ -1,7 +1,7 @@
 const exp=require("express")
 
 const app=exp();
-//to access data from excel and middleware
+//to access data from excel and acts as a middleware
 const multer=require('multer');
 const xlsxtojson=require("xlsx-to-json-lc");
 const xlstojson=require("xls-to-json-lc");
@@ -337,6 +337,7 @@ if(err)
 }
   else if(data==null)
   {
+
     //   res.send({message:"no data found"})
     console.log("data is empty");
     
@@ -443,7 +444,7 @@ else
 })
 })
 
-
+//read fee to display in student module
 app.get('/readFee/:fee',(req,res)=>{
     console.log("fee",req.params);
     
@@ -468,6 +469,7 @@ else
 }
 })
 })
+//read placement to display in student module
 app.get('/readPlacement/:placements',(req,res)=>{
     console.log("branch",req.params);
     
